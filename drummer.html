@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm dRuMMer</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .drummer-wrapper{
+            background-image: url("https://i.pinimg.com/originals/f9/5f/aa/f95faa13844a0638ef1f51bd464294c7.gif") ;                        
+            width: 100%;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-position: 100%;
+            background-size: cover;
+        }
+
+        .keys{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .key{
+            width: 100px;
+            height: 100px;
+            background-color: beige;
+            border-radius: 5px;
+            margin: 1rem;
+            font-size: 1.5rem;
+            padding: 1rem, 0.5rem;
+            transition: all 0.07s;
+            text-align: center;
+            color: rgb(10, 12, 14);            
+        }
+
+        .kbd{
+            display: block;
+            font-size: 40px;
+        }
+
+        .playing{
+            transform: scale(1.1);
+            border-color: aqua;
+            box-shadow: 0 0 10px #fff;
+        }
+
+        .sound{
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="drummer-wrapper">
+        <div class="keys">
+            <div data-key="65" class="key">
+                <kbd>A</kbd>
+                <span class="sound">Clap</span>
+            </div>
+
+            <div data-key="83" class="key">
+                <kbd>S</kbd>
+                <span class="sound">Hihat</span>
+            </div>
+
+            <div data-key="68" class="key">
+                <kbd>D</kbd>
+                <span class="sound">Kick</span>
+            </div>
+
+            <div data-key="70" class="key">
+                <kbd>F</kbd>
+                <span class="sound">Openhat</span>
+            </div>
+
+            <div data-key="71" class="key">
+                <kbd>G</kbd>
+                <span class="sound">Boom</span>
+            </div>
+
+            <div data-key="72" class="key">
+                <kbd>H</kbd>
+                <span class="sound">Ride</span>
+            </div>
+
+            <div data-key="74" class="key">
+                <kbd>J</kbd>
+                <span class="sound">Snare</span>
+            </div>
+            
+            <div data-key="75" class="key">
+                <kbd>K</kbd>
+                <span class="sound">Tom</span>
+            </div>
+            
+            <div data-key="76" class="key">
+                <kbd>L</kbd>
+                <span class="sound">Tink</span>
+            </div>
+        </div>
+    </div>
+
+    <audio data-key="65" src="E:\Yash Docs\HTML\Projects\mixkit-drum-bass-hit-2294.wav"></audio>
+    <audio data-key="83" src=""></audio>
+    <audio data-key="68" src=""></audio>
+    <audio data-key="70" src=""></audio>
+    <audio data-key="71" src=""></audio>
+    <audio data-key="72" src=""></audio>
+    <audio data-key="74" src=""></audio>
+    <audio data-key="75" src=""></audio>
+    <audio data-key="76" src=""></audio>
+    
+    
+    <script>
+        window.addEventListener('keydown', function(e){
+            const audio =  document.querySelector(`audio [data-key = "${e.keyCode}"]`);
+            if(!audio) return;
+            audio.play();
+        });
+    </script>
+</body>
+</html>
