@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>    
+</head>
+<body>
+
+    <h1>Enter your OTP</h1>
+    <div class="otp_pin">
+        <input maxlength="1" type="number"/>
+        <input maxlength="1" type="number"/>
+        <input maxlength="1" type="number"/>
+        <input maxlength="1" type="number"/>
+        <input maxlength="1" type="number"/>
+        <input maxlength="1" type="number"/>
+    </div>
+
+    <style>    
+        .otp_pin input{
+            width: 30px;
+           height: 30px;
+           margin-right: 10px;
+        }
+    </style>
+
+    <script>
+
+        const inputsRef = document.querySelectorAll('.otp_pin input');
+
+        inputsRef.forEach((inputRef)=>{
+            inputRef.addEventListener('keyup', function(e){
+                console.log(e.target.value);
+                if(e.target.value && !isNaN(Number(e.target.value))){
+                    e.target.nextElementSibling?.focus();
+                }
+            })
+        })
+
+
+        inputsRef.forEach((inputRef) => {
+            inputRef.addEventListener('keydown', function(e) {
+                if (e.key == "Delete" || e.key == "Backspace") {
+                    //console.log(e.target.value);
+                    if (!e.target.value) {
+                        e.target.previousElementSibling?.focus();
+                    }
+    
+                }
+            })
+        })
+    </script>
+</body>
+</html>

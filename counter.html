@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <div class="counter-wrapper">
+        <h1>Counter</h1>
+        <div class="result">0</div>
+        <div class="delta">
+            <span>Increment / Decrement by</span>
+            <input type="number" placeholder="delta" value="1" />            
+        </div>
+        <div class="action">
+            <button>+</button>        
+            <button>-</button>
+        </div>
+        <div class="reset">
+            <button>Reset</button>
+        </div>
+    </div>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            background-color: rgb(223, 123, 123);
+        }
+
+        .counter-wrapper{
+            height: 98vh;
+            display: grid;
+            place-content: center;
+        }
+
+        .counter-wrapper h1{
+            display: flex;
+            justify-content: center;
+            font-size: 60px;
+            color: rgb(196, 9, 9);
+            
+        }
+
+        .result{
+            display: flex;
+            justify-content: center;
+            font-size: 50px;
+            font-weight: 600;
+            
+        
+        }
+
+        .delta{ 
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        .delta input{
+            display: flex;
+            justify-content: center;
+            width: 30px;
+            background-color: darksalmon;
+            text-align: center;
+            margin-left: 5px;
+
+        }
+
+        .action{
+            display: flex;
+            justify-content: center; 
+            padding: 10px;           
+        }
+
+        .action button{
+            font-size: 35px;
+            padding: 15px 50px;
+            background-color: darksalmon;
+            margin: 10px;
+        }
+
+        .reset{
+            display: flex;
+            justify-content: center;
+            padding-top: 15px;
+        }
+
+        .reset button{
+            display: flex;
+            justify-content: center;
+            font-size: 35px;
+            padding: 15px 100px;
+            background-color: darksalmon;
+        }
+    </style>
+
+    <script>
+        //Ref
+        const resultRef = document.querySelector('.result');
+        const inputRef = document.querySelector('.delta input');
+        const plusRef = document.querySelector('.action button:nth-child(1)');
+        const minusRef = document.querySelector('.action button:nth-child(2)');
+        const resetRef = document.querySelector('.reset button');
+
+        let count = 0;
+        let delta = 1;
+
+        //method
+
+        function addListener(){
+            
+            inputRef.addEventListener('change', (e) =>{
+                delta= Number(e.target.value);
+            });
+
+            plusRef.addEventListener('click', (e) =>{
+                increment();
+            });
+
+            minusRef.addEventListener('click', (e) =>{
+                decrement();
+            });
+
+            resetRef.addEventListener('click', (e) =>{
+                reset();
+            });
+        }
+
+        function increment(){
+            count += delta;
+            updateResult();
+        }
+
+        function decrement(){
+            count -= delta;
+            updateResult();
+        }
+
+        function reset(){
+            count = 0;
+            updateResult();
+        }
+
+        function updateResult(){
+            resultRef.innerText = count;
+        }
+
+        addListener();
+    </script>
+</body>
+</html>
