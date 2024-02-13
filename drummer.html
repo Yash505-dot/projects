@@ -121,12 +121,6 @@
     <audio data-key="76" src=""></audio>
     
     
-    <script>
-        window.addEventListener('keydown', function(e){
-            const audio =  document.querySelector(`audio [data-key = "${e.keyCode}"]`);
-            if(!audio) return;
-            audio.play();
-        });
-    </script>
+    <script src="drummer.js"></script>
 </body>
 </html>
