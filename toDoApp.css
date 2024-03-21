@@ -1,0 +1,44 @@
+body {
+    background-image: url("https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/8a/f0/cognos-analytics-with-watson-leadspace-2.component.xl.ts=1709839324792.png/content/adobe-cms/us/en/products/cognos-analytics/_jcr_content/root/leadspace_container/leadspace");
+}
+
+.todowrapper {
+    display: flex;
+    justify-content: center; /* Changed to center */
+    align-items: center;
+    flex-direction: column;
+    background: radial-gradient(circle, rgba(99, 97, 98, 1) 0%, rgba(196, 188, 189, 1) 100%);
+    width: 600px;
+    padding: 20px; /* Added padding */
+}
+
+.todowrapper span {
+    font-size: 24px; /* Increased font size */
+    margin-bottom: 10px; /* Added margin for spacing */
+}
+
+.todoForm {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Added margin for spacing */
+}
+
+.todoForm input[type="text"] {
+    flex-grow: 1; /* Make input grow to fill available space */
+    margin-right: 10px; /* Added margin for spacing */
+}
+
+.item {
+    font-size: 15px;
+    text-shadow: 1px 1px 2px black; /* Improved text shadow */
+    margin-bottom: 10px; /* Added margin for spacing */
+}
+
+.item .delete {
+    margin-left: 10px; /* Adjusted margin for spacing */
+    cursor: pointer; /* Added cursor style */
+}
+
+.item .delete:hover {
+    color: red; /* Added hover effect for delete button */
+}
